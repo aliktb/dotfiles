@@ -23,3 +23,26 @@ A list of useful tools
 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - easy to see if a command is valid, what's wrapped in quotation marks etc.
 
 [The logfile Navigator](https://lnav.org/) (lnav) - more features when reading log files
+
+[neofetch](https://github.com/dylanaraps/neofetch) - displays system info
+
+
+## MacOS apps
+
+[Clipy](https://github.com/Clipy/Clipy) - clipboard manager
+
+[iTerm2](https://iterm2.com/) - terminal emulator with ability for hotkeys, useful commands, spupport for plugins and more
+
+-   [iterm2-snazzy](https://github.com/sindresorhus/iterm2-snazzy) - Color scheme for iterm2
+
+## Cross-platform apps
+
+[DBeaver](https://dbeaver.io/) - Database tool for use with most common SQL databases
+
+[Postman](https://www.postman.com/downloads/) - App for testing API endpoints with support for multiple auth standards such as oauth, AWS signatures, API keys etc
+
+## UNIX tools
+
+[Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) - Manages multiple versions of nodeJS with ease
+
+[Hoebrew](https://brew.sh/) - package manager commonly used with macOS but also avilaible to run on Linux machines
