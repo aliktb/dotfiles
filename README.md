@@ -45,4 +45,4 @@ A list of useful tools
 
 [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) - Manages multiple versions of nodeJS with ease
 
-[Hoebrew](https://brew.sh/) - package manager commonly used with macOS but also avilaible to run on Linux machines
+[Homebrew](https://brew.sh/) - package manager commonly used with macOS but also avilaible to run on Linux machines
