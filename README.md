@@ -38,7 +38,7 @@ A list of useful tools
 alias ls='exa --icons --color=always --group-directories-first'
 alias ll='exa -alF --icons --color=always --group-directories-first'
 alias la='exa -a --icons --color=always --group-directories-first'
-alias l= 'exa -a --icons --color=always --group-directories-first'
+alias l='exa -a --icons --color=always --group-directories-first'
 alias l.='exa -a | egrep "^\."'
 ```
 
