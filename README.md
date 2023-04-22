@@ -26,6 +26,21 @@ A list of useful tools
 
 [neofetch](https://github.com/dylanaraps/neofetch) - displays system info
 
+[neovim](https://github.com/neovim/neovim) - fork of vim editor but better
+
+[astrovim](https://github.com/AstroNvim/AstroNvim) - neovim config to create an IDE-like experience
+
+[exa](https://github.com/ogham/exa) - makes `ls` command look nicer
+
+- Add to `.zshrc`:
+```
+# Changing "ls" to "exa"
+alias ls='exa --icons --color=always --group-directories-first'
+alias ll='exa -alF --icons --color=always --group-directories-first'
+alias la='exa -a --icons --color=always --group-directories-first'
+alias l= 'exa -a --icons --color=always --group-directories-first'
+alias l.='exa -a | egrep "^\."'
+```
 
 ## MacOS apps
 
