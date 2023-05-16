@@ -32,10 +32,6 @@ A list of useful tools
 
 [exa](https://github.com/ogham/exa) - makes `ls` command look nicer
 
-[Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) - Manages multiple versions of nodeJS with ease
-
-[sdkman](https://sdkman.io/) - SDK manager, useful for managing multiple jdk versions, gradle etc
-
 - Add to `.zshrc`:
 ```
 # Changing "ls" to "exa"
@@ -46,6 +42,9 @@ alias l='exa -a --icons --color=always --group-directories-first'
 alias l.='exa -a | egrep "^\."'
 ```
 
+[Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) - Manages multiple versions of nodeJS with ease
+
+[sdkman](https://sdkman.io/) - SDK manager, useful for managing multiple jdk versions, gradle etc
 ## MacOS apps
 
 [Clipy](https://github.com/Clipy/Clipy) - clipboard manager
