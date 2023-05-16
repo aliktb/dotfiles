@@ -62,4 +62,4 @@ alias l.='exa -a | egrep "^\."'
 
 ## UNIX tools
 
-[Homebrew](https://brew.sh/) - package manager commonly used with macOS but also avilaible to run on Linux machines
+[Homebrew](https://brew.sh/) - package manager commonly used with macOS but also available to run on Linux machines
