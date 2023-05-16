@@ -32,6 +32,10 @@ A list of useful tools
 
 [exa](https://github.com/ogham/exa) - makes `ls` command look nicer
 
+[Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) - Manages multiple versions of nodeJS with ease
+
+[sdkman](https://sdkman.io/) - SDK manager, useful for managing multiple jdk versions, gradle etc
+
 - Add to `.zshrc`:
 ```
 # Changing "ls" to "exa"
@@ -57,7 +61,5 @@ alias l.='exa -a | egrep "^\."'
 [Postman](https://www.postman.com/downloads/) - App for testing API endpoints with support for multiple auth standards such as oauth, AWS signatures, API keys etc
 
 ## UNIX tools
-
-[Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) - Manages multiple versions of nodeJS with ease
 
 [Homebrew](https://brew.sh/) - package manager commonly used with macOS but also avilaible to run on Linux machines
