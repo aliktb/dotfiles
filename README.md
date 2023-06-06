@@ -62,3 +62,7 @@ alias l.='exa -a | egrep "^\."'
 ## UNIX tools
 
 [Homebrew](https://brew.sh/) - package manager commonly used with macOS but also available to run on Linux machines
+
+- To install packages in one go, from the root of this repo, run:
+`./init.sh`
+	- N.b. a pre-commit hook is setup to sort `brew-packages.txt` alphabetically. See the `hooks` directory for details

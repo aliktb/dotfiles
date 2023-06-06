@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sort -u -o brew-packages.txt{,}
+
+

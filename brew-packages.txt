@@ -1,0 +1,8 @@
+exa
+intellij-idea
+k9s
+lazygit
+nvm
+pre-commit
+spaceship
+visual-studio-code
