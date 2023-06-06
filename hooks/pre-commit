@@ -1,6 +1,5 @@
 #!/bin/sh
 
-sort -o brew-packages.txt{,}
+sort -u -o brew-packages.txt{,}
 
-sort brew-packages.txt | uniq -u
 
