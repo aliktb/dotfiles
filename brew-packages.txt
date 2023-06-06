@@ -1,6 +1,5 @@
 exa
 intellij-idea
-intellij-idea
 k9s
 lazygit
 nvm
