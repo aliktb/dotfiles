@@ -2,6 +2,10 @@
 
 A list of useful tools
 
+## Quick Setup
+
+Run `./init.sh` from terminal within macOS
+
 ## Kubernetes
 
 [kubectl](https://kubernetes.io/docs/reference/kubectl/) - Very useful for interacting with Kubernetes
