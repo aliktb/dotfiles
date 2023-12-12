@@ -1,4 +1,10 @@
-brew install podman
+#!/bin/bash
+
+## Credits
+## User https://github.com/kaaquist
+## from gist https://gist.github.com/kaaquist/dab64aeb52a815b935b11c86202761a3
+
+brew install podman --quiet
 
 ## Set VM with minium 4GB memory
 ## Needed to to opensearch
@@ -15,7 +21,7 @@ sudo /usr/local/bin/podman-mac-helper install
 ln -s /usr/local/bin/podman /usr/local/bin/docker
 
 
-brew install docker-compose
+brew install docker-compose --quiet
 
 ## Get the port from the ssh destinations
 ## https://docs.podman.io/en/stable/markdown/podman-system-connection-list.1.html
