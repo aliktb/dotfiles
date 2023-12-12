@@ -13,7 +13,7 @@ podman machine init --memory 4096
 podman machine start
 
 ## Install mac helper
-## Permission issues with creating volumes without this
+## Permission issues when creating volumes without this
 ## https://gist.github.com/kaaquist/dab64aeb52a815b935b11c86202761a3?permalink_comment_id=4317135#gistcomment-4317135
 sudo /usr/local/bin/podman-mac-helper install
 
