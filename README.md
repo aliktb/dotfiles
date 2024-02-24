@@ -39,3 +39,9 @@ Install Tmux plugins:
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
+
+Finally, get the dotfiles of this repo into your local machine. From the root of this repo, run:
+
+```bash
+stow .
+```

@@ -1,4 +1,3 @@
--- ~/.config/nvim/lua/plugins
 return {
   {
     "christoomey/vim-tmux-navigator",
