@@ -4,69 +4,50 @@ A list of useful tools
 
 ## Quick Setup
 
-Run `./init.sh` from terminal within macOS
+Clone this repo into your home directory:
 
-## Kubernetes
-
-[kubectl](https://kubernetes.io/docs/reference/kubectl/) - Very useful for interacting with Kubernetes
-
-[K9s](https://k9scli.io/) - Monitor logs and view running pods within k8s
-
-## CLI
-
-[Oh My ZSH](https://ohmyz.sh/) - Really useful extension to zsh shell with handy aliasing, support for plugins and themes
-
-[starship](https://starship.rs/) - minimal yet powerful shell prompt
-
-[bat](https://github.com/sharkdp/bat) - UNIX `cat` command but better
-
-[diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) - make `git diff` easier to read
-
-[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - see what you've typed before
-
-[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - easy to see if a command is valid, what's wrapped in quotation marks etc.
-
-[The logfile Navigator](https://lnav.org/) (lnav) - more features when reading log files
-
-[neofetch](https://github.com/dylanaraps/neofetch) - displays system info
-
-[neovim](https://github.com/neovim/neovim) - fork of vim editor but better
-
-[astrovim](https://github.com/AstroNvim/AstroNvim) - neovim config to create an IDE-like experience
-
-[exa](https://github.com/ogham/exa) - makes `ls` command look nicer
-
-- Add to `.zshrc`:
-```
-# Changing "ls" to "exa"
-alias ls='exa --icons --color=always --group-directories-first'
-alias ll='exa -alF --icons --color=always --group-directories-first'
-alias la='exa -a --icons --color=always --group-directories-first'
-alias l='exa -a --icons --color=always --group-directories-first'
-alias l.='exa -a | egrep "^\."'
+```bash
+git clone https://github.com/aliktb/dotfiles ${HOME}/dotfiles
 ```
 
-[Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) - Manages multiple versions of nodeJS with ease
+Run from terminal within macOS:
 
-[sdkman](https://sdkman.io/) - SDK manager, useful for managing multiple jdk versions, gradle etc
-## MacOS apps
+```bash
+## Install Xcode Command Line Tools
+xcode-select --install
 
-[Clipy](https://github.com/Clipy/Clipy) - clipboard manager
+## Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-[iTerm2](https://iterm2.com/) - terminal emulator with ability for hotkeys, useful commands, spupport for plugins and more
+Install Oh my Zsh:
 
--   [iterm2-snazzy](https://github.com/sindresorhus/iterm2-snazzy) - Color scheme for iterm2
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
-## Cross-platform apps
+Once Brew is installed, run the following to install all applications listed in the [Brewfile](./Brewfile):
 
-[DBeaver](https://dbeaver.io/) - Database tool for use with most common SQL databases
+```bash
+brew bundle
+```
 
-[Postman](https://www.postman.com/downloads/) - App for testing API endpoints with support for multiple auth standards such as oauth, AWS signatures, API keys etc
+Install zsh plugins:
 
-## UNIX tools
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-[Homebrew](https://brew.sh/) - package manager commonly used with macOS but also available to run on Linux machines
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
 
-- To install packages in one go, from the root of this repo, run:
-`./init.sh`
-	- N.b. a pre-commit hook is setup to sort `brew-packages.txt` alphabetically. See the `hooks` directory for details
+Install Tmux plugins:
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+Finally, get the dotfiles of this repo into your local machine. From the root of this repo, run:
+
+```bash
+stow .
+```
