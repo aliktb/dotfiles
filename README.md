@@ -1,6 +1,8 @@
-# useful-tools
+# dotfiles
 
-A list of useful tools
+My dotfiles config for my developer setup on MacOS.
+
+![tmux neovim example](./docs/screenshots/tmux-neovim-example.png)
 
 ## Quick Setup
 
