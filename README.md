@@ -4,6 +4,12 @@ A list of useful tools
 
 ## Quick Setup
 
+Clone this repo into your home directory:
+
+```bash
+git clone https://github.com/aliktb/dotfiles ${HOME}/dotfiles
+```
+
 Run from terminal within macOS:
 
 ```bash
