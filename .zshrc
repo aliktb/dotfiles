@@ -96,9 +96,7 @@ plugins=(
   tmux
   vscode
   yarn
-	zsh-autosuggestions
 	zsh-interactive-cd
-  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -163,6 +161,13 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Adding psql to path
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+# Enable zsh-autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Enable zsh-syntax-highlighting
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
