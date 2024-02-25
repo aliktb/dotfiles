@@ -8,6 +8,8 @@ eval "$(fnm env --use-on-cd)"
 export ZSH="$HOME/.oh-my-zsh"
 
 
+export FZF_BASE=/usr/local/bin/fzf
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -77,10 +79,27 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
+  aliases
+  colored-man-pages
+  command-not-found
+  git
+  docker
+  docker-compose
+  fnm
+  fzf
+  gradle
+  kubectl
+  mvn
+  safe-paste
+  sdk
+  tig
+  tmux
+  vscode
+  yarn
 	zsh-autosuggestions
-	zsh-syntax-highlighting
-	)
+	zsh-interactive-cd
+  zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -133,8 +152,6 @@ alias idea='open -na "IntelliJ IDEA CE.app"'
 # git alias to go to root of repo
 alias gitroot='cd $(git rev-parse --show-toplevel)'
 
-# alias kubectl to k
-alias k='kubectl'
 
 # unset the gm (git merge) alias for graphicsmaick
 
