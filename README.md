@@ -34,14 +34,6 @@ Once Brew is installed, run the following to install all applications listed in 
 brew bundle
 ```
 
-Install zsh plugins:
-
-```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-```
-
 Install Tmux plugins:
 
 ```bash
