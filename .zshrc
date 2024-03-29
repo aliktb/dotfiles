@@ -138,11 +138,11 @@ alias awsume=". awsume"
 
 
 # Changing "ls" to "exa"
-alias ls='exa --icons --color=always --group-directories-first'
-alias ll='exa -alF --icons --color=always --group-directories-first'
-alias la='exa -a --icons --color=always --group-directories-first'
-alias l='exa -a --icons --color=always --group-directories-first'
-alias l.='exa -a | egrep "^\."'
+alias ls='eza --icons --color=always --group-directories-first'
+alias ll='eza -alF --icons --color=always --group-directories-first'
+alias la='eza -a --icons --color=always --group-directories-first'
+alias l='eza -a --icons --color=always --group-directories-first'
+alias l.='eza -a | egrep "^\."'
 
 # Use keyword "idea" to open intelliJ
 alias idea='open -na "IntelliJ IDEA CE.app"'
@@ -150,6 +150,8 @@ alias idea='open -na "IntelliJ IDEA CE.app"'
 # git alias to go to root of repo
 alias gitroot='cd $(git rev-parse --show-toplevel)'
 
+# alias to docker, run podman commands as docker
+alias docker=podman
 
 # unset the gm (git merge) alias for graphicsmaick
 
