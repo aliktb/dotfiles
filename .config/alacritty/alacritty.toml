@@ -27,9 +27,11 @@ magenta = '#ff6ac1'
 cyan    = '#9aedfe'
 white   = '#f1f1f0'
 
-[font.normal]
+[font]
 
-family = "RobotoMono Nerd Font"
+normal = {family = "RobotoMono Nerd Font"}
+
+size = 14
 
 [selection]
 save_to_clipboard = true
