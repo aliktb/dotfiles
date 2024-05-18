@@ -1,141 +1,53 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# fnm node version manager
-eval "$(fnm env --use-on-cd)"
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+  # If you're using macOS, you'll want this enabled
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 
-export FZF_BASE=/usr/local/bin/fzf
+# Set the directory we want to store zinit and plugins
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# Download Zinit, if it's not there yet
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
 
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-# source "/usr/local/opt/spaceship/spaceship.zsh"
+# Source/Load zinit
+source "${ZINIT_HOME}/zinit.zsh"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# Add in zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# Add in snippets
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+zinit snippet OMZP::aws
+zinit snippet OMZP::colored-man-pages
+zinit snippet OMZP::command-not-found
+zinit snippet OMZP::git
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::kubectx
+zinit snippet OMZP::sudo
+zinit snippet OMZP::tig
+zinit snippet OMZP::tmux
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+# Load completions
+autoload -Uz compinit && compinit
 
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
 
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+# History
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+# Use keyword "idea" to open intelliJ
+alias idea='open -na "IntelliJ IDEA CE.app"'
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  aliases
-  colored-man-pages
-  command-not-found
-  git
-  docker
-  docker-compose
-  fnm
-  fzf
-  gradle
-  kubectl
-  mvn
-  safe-paste
-  sdk
-  tig
-  tmux
-  vscode
-  yarn
-	zsh-interactive-cd
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# bat color scheme
-export BAT_THEME="ansi"
-
-# alias awsume
-alias awsume=". awsume"
-
+# git alias to go to root of repo
+alias gitroot='cd $(git rev-parse --show-toplevel)'
 
 # Changing "ls" to "exa"
 alias ls='eza --icons --color=always --group-directories-first'
@@ -144,34 +56,30 @@ alias la='eza -a --icons --color=always --group-directories-first'
 alias l='eza -a --icons --color=always --group-directories-first'
 alias l.='eza -a | egrep "^\."'
 
-# Use keyword "idea" to open intelliJ
-alias idea='open -na "IntelliJ IDEA CE.app"'
+# bat color scheme
+export BAT_THEME="ansi"
 
-# git alias to go to root of repo
-alias gitroot='cd $(git rev-parse --show-toplevel)'
-
-# alias to docker, run podman commands as docker
-alias docker=podman
-
-# unset the gm (git merge) alias for graphicsmaick
-
-unalias gm
-
-eval "$(starship init zsh)"
-
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
-# Adding psql to path
-export PATH="/usr/local/opt/libpq/bin:$PATH"
-
-# Enable zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Enable zsh-syntax-highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# alias awsume
+alias awsume=". awsume"
 
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export GPG_TTY=$(tty)
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+# Shell integrations
+eval "$(fzf --zsh)"
+
+# Load starship theme
+# line 1: `starship` binary as command, from github release
+# line 2: starship setup at clone(create init.zsh, completion)
+# line 3: pull behavior same as clone, source init.zsh
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/starship
+
+
+
