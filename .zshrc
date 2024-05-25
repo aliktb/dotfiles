@@ -32,7 +32,6 @@ zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::sudo
 zinit snippet OMZP::tig
-zinit snippet OMZP::tmux
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -73,7 +72,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 source <(kubectl completion zsh)
 
 # Shell integrations
-eval "$(fzf --zsh)"
+# eval "$(fzf --zsh)"
 
 # Load starship theme
 # line 1: `starship` binary as command, from github release
@@ -86,3 +85,9 @@ zinit light starship/starship
 
 
 
+# fnm
+export PATH="/home/ali/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+
+eval "$(fnm env --use-on-cd)"
