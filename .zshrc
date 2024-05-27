@@ -1,59 +1,43 @@
-if [[ -f "/opt/homebrew/bin/brew" ]] then
-  # If you're using macOS, you'll want this enabled
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 
-# Set the directory we want to store zinit and plugins
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
-# Download Zinit, if it's not there yet
-if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
-
-# Source/Load zinit
-source "${ZINIT_HOME}/zinit.zsh"
-
-# Add in zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
-
-# Add in snippets
-
-zinit snippet OMZP::aws
-zinit snippet OMZP::colored-man-pages
-zinit snippet OMZP::command-not-found
-zinit snippet OMZP::git
-zinit snippet OMZP::kubectl
-zinit snippet OMZP::kubectx
-zinit snippet OMZP::sudo
-zinit snippet OMZP::tig
-
-# Load completions
-autoload -Uz compinit && compinit
+export FZF_BASE=/usr/local/bin/fzf
 
 
-# History
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  aliases
+  colored-man-pages
+  command-not-found
+  git
+  docker
+  docker-compose
+  fnm
+  fzf
+  gradle
+  kubectl
+  mvn
+  safe-paste
+  sdk
+  tig
+  tmux
+  vscode
+  yarn
+	zsh-interactive-cd
+)
 
-# Use keyword "idea" to open intelliJ
-alias idea='open -na "IntelliJ IDEA CE.app"'
+source $ZSH/oh-my-zsh.sh
 
-# git alias to go to root of repo
-alias gitroot='cd $(git rev-parse --show-toplevel)'
+# User configuration
 
-# Changing "ls" to "exa"
-alias ls='eza --icons --color=always --group-directories-first'
-alias ll='eza -alF --icons --color=always --group-directories-first'
-alias la='eza -a --icons --color=always --group-directories-first'
-alias l='eza -a --icons --color=always --group-directories-first'
-alias l.='eza -a | egrep "^\."'
 
 # bat color scheme
 export BAT_THEME="ansi"
@@ -62,32 +46,45 @@ export BAT_THEME="ansi"
 alias awsume=". awsume"
 
 
-# Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+# Changing "ls" to "exa"
+alias ls='eza --icons --color=always --group-directories-first'
+alias ll='eza -alF --icons --color=always --group-directories-first'
+alias la='eza -a --icons --color=always --group-directories-first'
+alias l='eza -a --icons --color=always --group-directories-first'
+alias l.='eza -a | egrep "^\."'
 
-# Kubectl autocomplete
-source <(kubectl completion zsh)
+# Use keyword "idea" to open intelliJ
+alias idea='open -na "IntelliJ IDEA CE.app"'
 
-# Shell integrations
-# eval "$(fzf --zsh)"
+# git alias to go to root of repo
+alias gitroot='cd $(git rev-parse --show-toplevel)'
 
-# Load starship theme
-# line 1: `starship` binary as command, from github release
-# line 2: starship setup at clone(create init.zsh, completion)
-# line 3: pull behavior same as clone, source init.zsh
-zinit ice as"command" from"gh-r" \
-          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" src"init.zsh"
-zinit light starship/starship
+# alias to docker, run podman commands as docker
+alias docker=podman
 
+# unset the gm (git merge) alias for graphicsmaick
 
+unalias gm
 
-# fnm
-export PATH="/home/ali/.local/share/fnm:$PATH"
-eval "`fnm env`"
+# Starship prompt
+eval "$(starship init zsh)"
 
-
+# fnm node version manager
 eval "$(fnm env --use-on-cd)"
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# Adding psql to path
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+# Enable zsh-autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Enable zsh-syntax-highlighting
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export GPG_TTY=$(tty)
