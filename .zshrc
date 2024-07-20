@@ -65,17 +65,6 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 
 unalias gm
 
-# Unalias standard `gp` and alias git push as `gp` with success message
-unalias gp
-gp () {
-  echo 'Attempting to push'
-  git push
-  if [ $? -eq 0 ]
-  then
-    echo '\e[31m󱓞 \033[93m󱓞 \033[96m󱓞 \033[95m󱓞 \033[32m󱓞 Successfully pushed 󱓞 \033[95m󱓞 \033[96m󱓞 \033[93m󱓞 \e[31m󱓞 \e[0m'
-  fi
-}
-
 # Starship prompt
 eval "$(starship init zsh)"
 
