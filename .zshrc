@@ -71,6 +71,7 @@ eval "$(starship init zsh)"
 # fnm node version manager
 eval "$(fnm env --use-on-cd)"
 
+# Enable kubectl krew plugin manager
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Adding psql to path
