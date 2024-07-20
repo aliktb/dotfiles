@@ -59,8 +59,6 @@ alias idea='open -na "IntelliJ IDEA CE.app"'
 # git alias to go to root of repo
 alias gitroot='cd $(git rev-parse --show-toplevel)'
 
-# alias to docker, run podman commands as docker
-alias docker=podman
 
 # unset the gm (git merge) alias for graphicsmaick
 
