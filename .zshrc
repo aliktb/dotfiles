@@ -32,6 +32,7 @@ plugins=(
   vscode
   yarn
 	zsh-interactive-cd
+  zsh-fzf-history-search
 )
 
 source $ZSH/oh-my-zsh.sh
