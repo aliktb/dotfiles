@@ -5,7 +5,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces"],
     "modules-center": ["custom/music"],
-    "modules-right": [ "cpu", "temperature", "disk","pulseaudio", "network", "backlight","battery", "clock", "tray", "custom/lock"],
+    "modules-right": [ "cpu", "temperature", "memory", "disk","pulseaudio", "network", "backlight","battery", "clock", "tray", "custom/lock"],
     "sway/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
@@ -60,6 +60,13 @@
         "thermal-zone": 10,
         "format": "{temperatureC}°C "
     },
+    "memory": {
+    "interval": 30,
+    "format": "{avail}GiB ",
+    "max-length": 10,
+    "tooltie": true,
+    "tooltip-format": "{percentage}% used"
+    },
     "disk": {
     "interval": 30,
     "format": "{free} ",
@@ -74,7 +81,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
+        "format": "{icon}  {volume}%",
         "format-muted": "",
         "format-icons": {
             "default": ["", "", " "]
