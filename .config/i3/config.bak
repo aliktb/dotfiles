@@ -46,7 +46,7 @@ floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+# tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -59,6 +59,7 @@ bindsym $mod+Shift+q kill
 
 # Rofi program launcher
 # bindsym $mod+d exec --no-startup-id rofi -show drun
+  zsh-syntax-highlighting
 
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
 bindsym $mod+x exec --no-startup-id powermenu_t2
@@ -248,14 +249,13 @@ bar {
         }
         
         # i3bar position
-        position top
+#        position top
 
         # 2px top padding, 6px right padding, 4px bottom padding, 1px left padding
-        padding 2px 10px 4px 1px
+#        padding 2px 10px 4px 1px
 }
 
 
-exec --no-startup-id sh ~/.config/startup.sh
 
 
 workspace 1 output DP-1-1
