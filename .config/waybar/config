@@ -5,7 +5,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces"],
     "modules-center": ["custom/music"],
-    "modules-right": [ "cpu", "temperature", "pulseaudio", "network", "backlight","battery", "clock", "tray", "custom/lock"],
+    "modules-right": [ "cpu", "temperature", "disk","pulseaudio", "network", "backlight","battery", "clock", "tray", "custom/lock"],
     "sway/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
@@ -59,6 +59,11 @@
     "temperature": {
         "thermal-zone": 10,
         "format": "{temperatureC}°C "
+    },
+    "disk": {
+    "interval": 30,
+    "format": "{free} ",
+    "path": "/"
     },
     "network": {
         "format-wifi": "  {signalStrength}%",
