@@ -51,6 +51,8 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# Take screenshot
+bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
 
 # Set the Wallpaper:
 output * bg $HOME/.config/sway/arch-black-4k.png fill
