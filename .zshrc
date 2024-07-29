@@ -76,15 +76,28 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # Adding psql to path
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
-# Enable zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+case `uname` in
+  Darwin)
 
-# Enable zsh-syntax-highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    # Enable zsh-autosuggestions
+    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+    # Enable zsh-syntax-highlighting
+    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  ;;
+  Linux)
+    # Enable zsh-autosuggestions
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    
+    # Enable zsh-syntax-highlighting
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  ;;
+  FreeBSD)
+    # commands for FreeBSD go here
+  ;;
+esac
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export GPG_TTY=$(tty)
-
