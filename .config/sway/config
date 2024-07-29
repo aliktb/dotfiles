@@ -65,6 +65,13 @@ output DP-4 pos 0 0 res 1920x1080
 output DP-2 pos 1920 0 res 1920x1080
 output eDP-1 pos 3840 0 res 1920x1080
 
+input "1160:4132:VEN_0488:00_0488:1024_Touchpad" {
+    natural_scroll enabled
+    dwt enabled
+    tap enabled
+    middle_emulation enabled
+}
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
