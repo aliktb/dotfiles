@@ -31,7 +31,7 @@ plugins=(
   tmux
   vscode
   yarn
-	zsh-interactive-cd
+  zsh-interactive-cd
   zsh-fzf-history-search
 )
 
@@ -62,7 +62,6 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 
 
 # unset the gm (git merge) alias for graphicsmaick
-
 unalias gm
 
 # Starship prompt
