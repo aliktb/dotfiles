@@ -5,9 +5,11 @@ base-devel
 bat
 bluez-utils
 brave-bin
+brightnessctl
 btrfs-progs
 cmatrix
 cups
+diff-so-fancy
 efibootmgr
 epiphany
 evince
@@ -49,6 +51,7 @@ gnome-user-share
 gnome-weather
 google-chrome
 grilo-plugins
+grim
 grub
 gst-plugin-pipewire
 gvfs
@@ -68,8 +71,9 @@ k9s
 kind
 kubectl
 lazygit
+less
 libpulse
-light
+libreoffice-fresh
 linux
 linux-firmware
 loupe
@@ -91,6 +95,7 @@ qemu-base
 rygel
 simple-scan
 slack-desktop
+slurp
 snapshot
 sof-firmware
 spotify-launcher
@@ -99,6 +104,7 @@ stow
 sushi
 sway
 swaybg
+swayosd-git
 tecla
 thunar
 tk
@@ -110,7 +116,9 @@ vim
 visual-studio-code-bin
 waybar
 wireplumber
+wl-clipboard
 wlogout
+wob
 wofi
 xdg-desktop-portal-gnome
 xdg-user-dirs-gtk
