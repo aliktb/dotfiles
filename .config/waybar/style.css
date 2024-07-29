@@ -83,10 +83,19 @@
 #cpu {
   border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
+  color: @mauve;
 }
 
 #temperature {
   color: @maroon;
+}
+
+#memory {
+  color: @teal;
+}
+
+#disk {
+  color: @yellow;
 }
 
 #custom-music {

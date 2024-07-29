@@ -31,10 +31,10 @@
         "max-length": 50
     },
     "clock": {
+        "interval": 1,
+        "format": "{:%d/%m/%Y %H:%M:%S}  ",
         "timezone": "Europe/London",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": " {:%d/%m/%Y}",
-        "format": " {:%H:%M}"
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "backlight": {
         "device": "intel_backlight",
@@ -46,14 +46,14 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}   {capacity}",
+        "format": "{capacity} {icon}",
         "format-charging": "    {capacity}",
         "format-plugged": "    {capacity}",
         "format-icons": ""
     },
     "cpu": {
         "interval": 10,
-        "format": "{usage}% ",
+        "format": "{usage}%  ",
         "max-length": 10
     },
     "temperature": {
@@ -62,22 +62,22 @@
     },
     "memory": {
     "interval": 30,
-    "format": "{avail}GiB ",
-    "max-length": 10,
+    "format": "{avail}GiB  ",
+    "max-length": 11,
     "tooltie": true,
     "tooltip-format": "{percentage}% used"
     },
     "disk": {
     "interval": 30,
-    "format": "{free} ",
+    "format": "{free}  ",
     "path": "/"
     },
     "network": {
-        "format-wifi": "  {signalStrength}%",
+        "format-wifi": "",
         "format-ethernet": "",
         "format-linked": "",
         "format-disconnected": "⚠",
-        "format-alt": "{ipaddr}/{cidr}"
+        "format-alt": "{ipaddr}/{cidr} - Signal Strength: {signalStrength}%"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
