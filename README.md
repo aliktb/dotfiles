@@ -4,7 +4,9 @@ These are my dotfiles. There are many others like them, but these ones are mine.
 
 ![tmux neovim example](./docs/screenshots/tmux-neovim-example.png)
 
-## Quick Setup
+![Arch Sway desktop example](./docs/screenshots/screenshot-desktop-29-07-24.png)
+
+## Quick Setup for MacOS
 
 Clone this repo into your home directory:
 
