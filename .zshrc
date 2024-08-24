@@ -20,7 +20,6 @@ plugins=(
   git
   docker
   docker-compose
-  fnm
   fzf
   gradle
   kubectl
@@ -67,8 +66,6 @@ unalias gm
 # Starship prompt
 eval "$(starship init zsh)"
 
-# fnm node version manager
-eval "$(fnm env --use-on-cd)"
 
 # Enable kubectl krew plugin manager
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
@@ -97,7 +94,6 @@ case `uname` in
   ;;
 esac
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export GPG_TTY=$(tty)
+
+eval "$(vfox activate zsh)"
