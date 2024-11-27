@@ -108,3 +108,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="$(brew --prefix)/bin/:$PATH"
 
+# fnm
+FNM_PATH="/Users/alikhattab/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/alikhattab/Library/Application Support/fnm:$PATH"
+  eval "`fnm env`"
+fi
