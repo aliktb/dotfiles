@@ -7,6 +7,28 @@ export ZSH="$HOME/.oh-my-zsh"
 
 export FZF_BASE=/usr/local/bin/fzf
 
+case `uname` in
+  Darwin)
+    # Set homebrew path    
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    # Enable zsh-autosuggestions
+    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+    # Enable zsh-syntax-highlighting
+    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  ;;
+  Linux)
+    # Enable zsh-autosuggestions
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    
+    # Enable zsh-syntax-highlighting
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  ;;
+  FreeBSD)
+    # commands for FreeBSD go here
+  ;;
+esac
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -73,11 +95,7 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # Adding psql to path
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
-case `uname` in
-  Darwin)
 
-    # Enable zsh-autosuggestions
-    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
     # Enable zsh-syntax-highlighting
     source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
