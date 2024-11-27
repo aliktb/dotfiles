@@ -84,6 +84,12 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 # unset the gm (git merge) alias for graphicsmaick
 unalias gm
 
+# Function to decode kubernetes secret
+#
+# E.g. kubectl get secret my-secret -o json | ksec
+ksec() { jq '.data | map_values(@base64d)' }
+
+
 # Starship prompt
 eval "$(starship init zsh)"
 
