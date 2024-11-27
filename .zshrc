@@ -56,10 +56,9 @@ plugins=(
   zsh-fzf-history-search
 )
 
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
+source $ZSH/oh-my-zsh.sh
 
 # bat color scheme
 export BAT_THEME="ansi"
@@ -97,24 +96,12 @@ export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 
 
-    # Enable zsh-syntax-highlighting
-    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  ;;
-  Linux)
-    # Enable zsh-autosuggestions
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-    
-    # Enable zsh-syntax-highlighting
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  ;;
-  FreeBSD)
-    # commands for FreeBSD go here
-  ;;
-esac
-
 export GPG_TTY=$(tty)
-  
+
 eval "$(direnv hook zsh)"
+
+eval "$(fnm env --use-on-cd --shell zsh)"
+
 
 eval "$(vfox activate zsh)"
 
