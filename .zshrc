@@ -93,6 +93,8 @@ ksec() { jq '.data | map_values(@base64d)' }
 # Starship prompt
 eval "$(starship init zsh)"
 
+# Add Go to path variable
+export PATH=$PATH:$HOME/go/bin
 
 # Enable kubectl krew plugin manager
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
