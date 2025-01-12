@@ -12,18 +12,36 @@ case `uname` in
     # Set homebrew path    
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
+    export PATH="$(brew --prefix)/bin/:$PATH"
+
     # Enable zsh-autosuggestions
     source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
     # Enable zsh-syntax-highlighting
     source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+    # fnm
+    FNM_PATH="/Users/alikhattab/Library/Application Support/fnm"
+    if [ -d "$FNM_PATH" ]; then
+      export PATH="/Users/alikhattab/Library/Application Support/fnm:$PATH"
+      eval "`fnm env`"
+    fi
+
   ;;
   Linux)
     # Enable zsh-autosuggestions
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-    
+      source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
     # Enable zsh-syntax-highlighting
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source ~/.zsh/./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+    # fnm
+    FNM_PATH="/home/ali/.local/share/fnm"
+    if [ -d "$FNM_PATH" ]; then
+      export PATH="/home/ali/.local/share/fnm:$PATH"
+      eval "`fnm env`"
+    fi
+
   ;;
   FreeBSD)
     # commands for FreeBSD go here
@@ -114,11 +132,3 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export PATH="$(brew --prefix)/bin/:$PATH"
-
-# fnm
-FNM_PATH="/Users/alikhattab/Library/Application Support/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/Users/alikhattab/Library/Application Support/fnm:$PATH"
-  eval "`fnm env`"
-fi
