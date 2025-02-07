@@ -120,7 +120,8 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # Adding psql to path
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
-
+# Set FluxCD autocompletions
+command -v flux >/dev/null && . <(flux completion zsh)
 
 export GPG_TTY=$(tty)
 
