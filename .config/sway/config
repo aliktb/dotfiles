@@ -54,6 +54,7 @@ bindsym $mod+Shift+q kill
 # Take screenshot
 bindsym $mod+p exec grim -g "$(slurp)" - | wl-copy
 
+
 # Set the Wallpaper:
 output * bg $HOME/.config/sway/arch-black-4k.png fill
 
@@ -62,7 +63,7 @@ output DP-2 pos 1920 0 res 1920x1080
 output eDP-1 pos 3840 0 res 1920x1080
 
 # Set touchpad config
-input "1160:4132:VEN_0488:00_0488:1024_Touchpad" {
+input "1739:52839:SYNA8022:00_06CB:CE67_Touchpad" {
     natural_scroll enabled
     dwt enabled
     tap enabled
