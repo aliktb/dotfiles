@@ -29,6 +29,10 @@ case `uname` in
 
   ;;
   Linux)
+
+    # Allow Docker CLI to Podman
+    export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
+
     # Enable zsh-autosuggestions
       source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
