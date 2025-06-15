@@ -34,10 +34,10 @@ case `uname` in
     export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
 
     # Enable zsh-autosuggestions
-      source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
     # Enable zsh-syntax-highlighting
-    source ~/.zsh/./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
     # fnm
     FNM_PATH="/home/ali/.local/share/fnm"
