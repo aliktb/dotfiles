@@ -9,7 +9,7 @@ export FZF_BASE=/usr/local/bin/fzf
 
 case `uname` in
   Darwin)
-    # Set homebrew path    
+    # Set homebrew path
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
     export PATH="$(brew --prefix)/bin/:$PATH"
