@@ -30,6 +30,9 @@ case `uname` in
   ;;
   Linux)
 
+    # Add Cargo to path
+    export PATH="$HOME/.cargo/bin:$PATH"
+
     # Allow Docker CLI to Podman
     export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
 
