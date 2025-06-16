@@ -2,7 +2,8 @@
   "extras": [
     "lazyvim.plugins.extras.dap.nlua",
     "lazyvim.plugins.extras.formatting.prettier",
-    "lazyvim.plugins.extras.lang.markdown"
+    "lazyvim.plugins.extras.lang.markdown",
+    "lazyvim.plugins.extras.ui.smear-cursor"
   ],
   "news": {
     "NEWS.md": "10960"
