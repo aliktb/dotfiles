@@ -1,6 +1,9 @@
 # dotfiles
 
-These are my dotfiles. There are many others like them, but these ones are mine. My dotfiles are my best friends. They are my life. I must master them as I must master my life. Without me, my dotfiles are useless. Without my dotfiles, I am useless.
+These are my dotfiles. There are many others like them, but these ones are mine.
+My dotfiles are my best friends. They are my life. I must master them as I must
+master my life. Without me, my dotfiles are useless. Without my dotfiles, I am
+useless.
 
 ![tmux neovim example](./docs/screenshots/tmux-neovim-example.png)
 
@@ -30,7 +33,8 @@ Install Oh my Zsh:
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-Once Brew is installed, run the following to install all applications listed in the [Brewfile](./Brewfile):
+Once Brew is installed, run the following to install all applications listed in
+the [Brewfile](./Brewfile):
 
 ```bash
 brew bundle
@@ -42,7 +46,8 @@ Install Tmux plugins:
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-Finally, get the dotfiles of this repo into your local machine. From the root of this repo, run:
+Finally, get the dotfiles of this repo into your local machine. From the root of
+this repo, run:
 
 ```bash
 stow .
