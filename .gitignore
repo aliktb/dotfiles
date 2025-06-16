@@ -1,5 +1,4 @@
-.config/scw
-.config/tmux/plugins
-.config/testcontainers
-
 .DS_Store
+.config/scw
+.config/testcontainers
+.config/tmux/plugins
