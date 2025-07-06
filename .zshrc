@@ -140,6 +140,12 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
 
+# Created by `pipx`
+export PATH="$PATH:/home/ali/.local/bin"
+
+# AWS CLI autocompletions
+autoload -Uz compinit && compinit
+complete -C aws_completer aws
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
