@@ -111,6 +111,8 @@ unalias gm
 # E.g. kubectl get secret my-secret -o json | ksec
 ksec() { jq '.data | map_values(@base64d)' }
 
+# Set nvim as `kubectl edit` editor
+export KUBE_EDITOR="nvim"
 
 # Starship prompt
 eval "$(starship init zsh)"
