@@ -33,9 +33,6 @@ case `uname` in
     # Add Cargo to path
     export PATH="$HOME/.cargo/bin:$PATH"
 
-    # Allow Docker CLI to Podman
-    export DOCKER_HOST=unix:///run/user/1000/podman/podman.sock
-
     # Enable zsh-autosuggestions
     source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
