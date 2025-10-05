@@ -16,11 +16,13 @@ source_dir() {
   done
 }
 
-# common first
-source_dir "$COMMON_DIR"
-
-# platform-specific
+# platform-specific first
 case "$(uname -s)" in
   Darwin) source_dir "$MAC_DIR" ;;
   Linux)  source_dir "$LINUX_DIR" ;;
+
 esac
+
+# common next
+source_dir "$COMMON_DIR"
+
