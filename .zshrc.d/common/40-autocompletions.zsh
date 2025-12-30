@@ -23,3 +23,8 @@ command -v pack >/dev/null && . $(pack completion --shell zsh)
 command -v telepresence >/dev/null && . <(telepresence completion zsh)
 
 command -v vcluster >/dev/null && . <(vcluster completion zsh)
+
+# Open buffer line in editor
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
