@@ -30,3 +30,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 
 # Created by `pipx`
 export PATH="$PATH:/home/ali/.local/bin"
+
+# Set default editor for ZSH as Neovim
+export EDITOR=nvim
