@@ -24,6 +24,9 @@ plugins=(
   zsh-fzf-history-search
 )
 
+# See https://github.com/zsh-users/zsh-completions for details
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+autoload -U compinit && compinit
 
 # User configuration
 source $ZSH/oh-my-zsh.sh

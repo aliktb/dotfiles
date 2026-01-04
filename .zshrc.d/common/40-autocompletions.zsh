@@ -7,7 +7,6 @@ command -v flux-operator >/dev/null && . <(flux-operator completion zsh)
 command -v clusterawsadm >/dev/null && . <(clusterawsadm completion zsh)
 
 # AWS CLI autocompletions
-autoload -Uz compinit && compinit
 complete -C aws_completer aws
 
 # Set clusterawsadm autocompletion
