@@ -23,6 +23,8 @@ command -v telepresence >/dev/null && . <(telepresence completion zsh)
 
 command -v vcluster >/dev/null && . <(vcluster completion zsh)
 
+command -v talosctl >/dev/null && . <(talosctl completion zsh)
+
 # Open buffer line in editor
 autoload -z edit-command-line
 zle -N edit-command-line
