@@ -1,39 +1,29 @@
-# Set Flux autocompletion
-command -v flux >/dev/null && . <(flux completion zsh)
+# Autocompletions
+local -a completion_cmds=(
+  clusterawsadm
+  eksctl
+  flux
+  flux-operator
+  nerdctl
+  talosctl
+  telepresence
+  vcluster
+)
 
-command -v flux-operator >/dev/null && . <(flux-operator completion zsh)
+for cmd in $completion_cmds; do
+  command -v $cmd >/dev/null && . <($cmd completion zsh)
+done
 
-# Set clusterawsadm autocompletion
-command -v clusterawsadm >/dev/null && . <(clusterawsadm completion zsh)
-
-# AWS CLI autocompletions
-complete -C aws_completer aws
-
-# Set clusterawsadm autocompletion
-command -v eksctl >/dev/null && . <(eksctl completion zsh)
-
-
-# COMPLETE=zsh prek > "${fpath[1]}/_prek"
-
-command -v nerdctl >/dev/null && . <(nerdctl completion zsh)
-
+# Special cases
 command -v pack >/dev/null && . $(pack completion --shell zsh)
 
-command -v telepresence >/dev/null && . <(telepresence completion zsh)
+# AWS CLI (uses different completion mechanism)
+command -v aws >/dev/null && complete -C aws_completer aws
 
-command -v vcluster >/dev/null && . <(vcluster completion zsh)
-
-command -v talosctl >/dev/null && . <(talosctl completion zsh)
-
-# Set OpenTofu autocompletion
+# OpenTofu (uses bash-style completion)
 if command -v tofu >/dev/null; then
-  # Note: The tofu completion uses bash-style completion (via bashcompinit),
-  # which is different from the native zsh completions used by your other tools
-  # (which use <(command completion zsh)). This is fine - the bashcompinit call
-  # enables bash completion compatibility in zsh, and calling it multiple times
-  # is safe (it won't cause issues).
   autoload -U +X bashcompinit && bashcompinit
-  complete -o nospace -C $(which tofu) tofu
+  complete -o nospace -C $(command -v tofu) tofu
 fi
 
 # Open buffer line in editor
