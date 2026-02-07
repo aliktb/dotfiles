@@ -28,8 +28,7 @@ export GPG_TTY=$(tty)
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 
-# Created by `pipx`
-export PATH="$PATH:/home/ali/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # Set default editor for ZSH as Neovim
 export EDITOR=nvim
