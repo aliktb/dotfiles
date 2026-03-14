@@ -1,0 +1,11 @@
+profile docked {
+    output "Hewlett Packard HP Z23i 3CQ3512Z2X" enable position 0,0 mode 1920x1080
+    output "Hewlett Packard HP Z23i 3CQ5140GZB" enable position 1920,0 mode 1920x1080
+    output "AU Optronics 0xFA9B Unknown" enable position 3840,0 mode 1920x1200
+}
+
+profile laptop {
+    output "AU Optronics 0xFA9B Unknown" enable position 0,0 mode 1920x1200
+    output "Hewlett Packard HP Z23i 3CQ3512Z2X" disable
+    output "Hewlett Packard HP Z23i 3CQ5140GZB" disable
+}
