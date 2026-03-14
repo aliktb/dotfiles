@@ -1,0 +1,10 @@
+[commit]
+  gpgSign = true
+[tag]
+  gpgSign = true
+[includeIf "gitdir:~/code/"]
+  path = ~/.gitconfig-personal
+[includeIf "gitdir:~/dotfiles/"]
+  path = ~/.gitconfig-personal
+[includeIf "gitdir:~/work/"]
+  path = ~/.gitconfig-work

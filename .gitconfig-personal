@@ -1,0 +1,22 @@
+[commit]
+	gpgSign = true
+[core]
+	editor = nvim
+	pager = diff-so-fancy | less --tabs=4 -RF
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gitlab.com"]
+	helper = 
+	helper = !/usr/bin/glab auth git-credential
+[init]
+	defaultBranch = main
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[user]
+	email = aliktb@zohomail.eu
+	name = Ali Khattab
+	signingkey = 02F1E457E8306C4F
