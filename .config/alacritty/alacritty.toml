@@ -42,7 +42,7 @@ dynamic_title = false
 
 normal = {family = "CommitMono Nerd Font", style = "Regular"}
 
-size = 14
+size = 12
 
 [selection]
 save_to_clipboard = true
