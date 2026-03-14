@@ -1,40 +1,30 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    // "width": 1280, // Waybar width
-    // Choose the order of the modules
+    "layer": "top",
+    "position": "top",
+    "height": 36,
     "modules-left": ["sway/workspaces"],
-    "modules-center": ["custom/music"],
-    "modules-right": [ "cpu", "temperature", "memory", "disk","pulseaudio", "network", "backlight","battery", "clock", "tray", "custom/lock"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "temperature", "memory", "disk", "pulseaudio", "network", "backlight", "battery", "tray", "custom/lock"],
+
     "sway/workspaces": {
-         "disable-scroll": true,
-         "sort-by-name": true,
-         "all-outputs": false,
-         "active-only": true,
-         "format": "{name}",
-        //  "format-icons": {
-            //  "default": ""
-        //  },
-         "sort-by-number": false
-     },
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
-    },
-    "custom/music": {
-        "format": "  {}",
-        "escape": true,
-        "interval": 5,
-        "tooltip": false,
-        "exec": "playerctl metadata --format='{{ title }}'",
-        "on-click": "playerctl play-pause",
-        "max-length": 50
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{name}"
     },
     "clock": {
         "interval": 1,
         "format": "{:%d/%m/%Y %H:%M:%S}  ",
         "timezone": "Europe/London",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>"
+    },
+    "custom/music": {
+        "format": "♪  {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ artist }} — {{ title }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 60
     },
     "backlight": {
         "device": "intel_backlight",
@@ -46,9 +36,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity} {icon}",
-        "format-charging": "    {capacity}",
-        "format-plugged": "    {capacity}",
+        "format": "{capacity}% {icon}",
+        "format-charging": "    {capacity}%",
+        "format-plugged": "    {capacity}%",
         "format-icons": ""
     },
     "cpu": {
@@ -89,7 +79,11 @@
     },
     "custom/lock": {
         "tooltip": false,
-        "on-click": "wlogout",
+        "on-click": "wlogout --protocol layer-shell --buttons-per-row 5 --column-spacing 10 --row-spacing 10 --margin 400 --no-span",
         "format": ""
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
     }
 }
