@@ -23,6 +23,7 @@ exec dbus-update-activation-environment --systemd \
 
 # ── Autostart ─────────────────────────────────────────────────────────────────
 
+exec kanshi
 exec nm-applet
 exec swayidle -w \
     timeout 300 'swaylock' \
@@ -74,10 +75,6 @@ client.background        $base
 # ── Outputs ───────────────────────────────────────────────────────────────────
 
 output * bg $HOME/.config/sway/background.png fill
-
-output DP-4  pos 0    0 res 1920x1080
-output DP-2  pos 1920 0 res 1920x1080
-output eDP-1 pos 3840 0 res 1920x1080
 
 # ── Inputs ────────────────────────────────────────────────────────────────────
 
