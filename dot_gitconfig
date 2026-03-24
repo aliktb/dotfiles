@@ -6,5 +6,7 @@
   path = ~/.gitconfig-personal
 [includeIf "gitdir:~/dotfiles/"]
   path = ~/.gitconfig-personal
+[includeIf "gitdir:~/.local/share/chezmoi/"]
+  path = ~/.gitconfig-personal
 [includeIf "gitdir:~/work/"]
   path = ~/.gitconfig-work
