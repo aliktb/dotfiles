@@ -1,0 +1,8 @@
+[data]
+{{ if eq .chezmoi.osRelease.id "arch" -}}
+  zsh_plugins_dir = "/usr/share/zsh/plugins"
+  omz_dir = "/usr/share/oh-my-zsh"
+{{ else if eq .chezmoi.osRelease.id "fedora" -}}
+  zsh_plugins_dir = "/usr/share"
+  omz_dir = "~/.oh-my-zsh"
+{{ end -}}
