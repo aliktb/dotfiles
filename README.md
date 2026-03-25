@@ -9,46 +9,29 @@ useless.
 
 ![Arch Sway desktop example](./docs/screenshots/screenshot-desktop-29-07-24.png)
 
-## Quick Setup for MacOS
+## Quick Setup
 
-Clone this repo into your home directory:
+Install [chezmoi](https://www.chezmoi.io/). See the [installation
+docs](https://www.chezmoi.io/install/) on how to do this for your OS
 
-```bash
-git clone https://github.com/aliktb/dotfiles ${HOME}/dotfiles
-```
-
-Run from terminal within macOS:
+Then simply run:
 
 ```bash
-## Install Xcode Command Line Tools
-xcode-select --install
-
-## Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+chezmoi init aliktb
 ```
 
-Install Oh my Zsh:
+This will clone this repo to `~/.local/share/chezmoi`
+
+Check the content of the local repo. Then apply the config to your local machine:
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chezmoi apply
 ```
 
-Once Brew is installed, run the following to install all applications listed in
-the [Brewfile](./Brewfile):
-
-```bash
-brew bundle
-```
-
-Install Tmux plugins:
-
-```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-Finally, get the dotfiles of this repo into your local machine. From the root of
-this repo, run:
-
-```bash
-stow .
-```
+> [!TIP]
+> If you want to clone the repo and have the dotfiles applied to your home
+> directory in one command, simply run:
+>
+> ```bash
+> chezmoi init --apply aliktb
+> ```
