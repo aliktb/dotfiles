@@ -1,0 +1,5 @@
+.stow-local-ignore
+Brewfile
+README.md
+docs
+utils
