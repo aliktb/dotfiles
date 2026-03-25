@@ -1,0 +1,12 @@
+# Enable zsh-autosuggestions
+source {{ .zsh_plugins_dir }}/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Enable zsh-syntax-highlighting
+source {{ .zsh_plugins_dir }}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# fnm
+FNM_PATH="{{ .chezmoi.homeDir }}/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="{{ .chezmoi.homeDir }}/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
