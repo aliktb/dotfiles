@@ -21,7 +21,6 @@ plugins=(
   vscode
   yarn
   zsh-interactive-cd
-  zsh-fzf-history-search
 )
 
 # See https://github.com/zsh-users/zsh-completions for details
