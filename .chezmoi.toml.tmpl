@@ -1,8 +1,15 @@
 [data]
-{{ if eq .chezmoi.osRelease.id "arch" -}}
+{{- if eq .chezmoi.os "darwin" }}
+  zsh_plugins_dir = "/opt/homebrew/share"
+  omz_dir = "~/.oh-my-zsh"
+
+{{- else if eq .chezmoi.os "linux" }}
+  {{- $osid := index .chezmoi.osRelease "id" | default "" -}}
+  {{- if eq $osid "arch" }}
   zsh_plugins_dir = "/usr/share/zsh/plugins"
   omz_dir = "/usr/share/oh-my-zsh"
-{{ else if eq .chezmoi.osRelease.id "fedora" -}}
+  {{- else if eq $osid "fedora" }}
   zsh_plugins_dir = "/usr/share"
   omz_dir = "~/.oh-my-zsh"
-{{ end -}}
+  {{- end }}
+{{- end }}
