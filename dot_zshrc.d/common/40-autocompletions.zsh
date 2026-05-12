@@ -17,6 +17,12 @@ done
 # Special cases
 command -v pack >/dev/null && . $(pack completion --shell zsh)
 
+# Google Cloud SDK
+if command -v gcloud >/dev/null; then
+  local gcloud_sdk_root="${$(command -v gcloud):A:h:h}"
+  [ -r "$gcloud_sdk_root/completion.zsh.inc" ] && . "$gcloud_sdk_root/completion.zsh.inc"
+fi
+
 # AWS CLI (uses different completion mechanism)
 command -v aws >/dev/null && complete -C aws_completer aws
 
