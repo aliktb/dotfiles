@@ -1,3 +1,9 @@
+# Add Homebrew to the environment when it is installed. Homebrew's supported
+# Linux prefix is shared across distributions and is not in PATH by default.
+if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+fi
+
 # Add Cargo to path
 export PATH="$HOME/.cargo/bin:$PATH"
 
