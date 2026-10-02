@@ -7,6 +7,5 @@ source {{ .zsh_plugins_dir }}/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # fnm
 FNM_PATH="{{ .chezmoi.homeDir }}/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="{{ .chezmoi.homeDir }}/.local/share/fnm:$PATH"
-  eval "`fnm env`"
+  export PATH="$FNM_PATH:$PATH"
 fi
