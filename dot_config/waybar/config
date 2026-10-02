@@ -1,8 +1,9 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 36,
-    "modules-left": ["sway/workspaces"],
+    "height": 38,
+    "spacing": 4,
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["cpu", "temperature", "memory", "disk", "pulseaudio", "network", "backlight", "battery", "tray", "custom/lock"],
 
@@ -11,9 +12,14 @@
         "all-outputs": false,
         "format": "{name}"
     },
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
     "clock": {
         "interval": 1,
-        "format": "{:%d/%m/%Y %H:%M:%S}  ",
+        "format": "  {:%d/%m/%Y %H:%M:%S}",
         "timezone": "Europe/London",
         "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>"
     },
@@ -28,7 +34,7 @@
     },
     "backlight": {
         "device": "intel_backlight",
-        "format": "{icon}",
+        "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
@@ -36,35 +42,35 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "    {capacity}%",
-        "format-plugged": "    {capacity}%",
-        "format-icons": ""
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""]
     },
     "cpu": {
         "interval": 10,
-        "format": "{usage}%  ",
+        "format": " {usage}%",
         "max-length": 10
     },
     "temperature": {
         "thermal-zone": 10,
-        "format": "{temperatureC}°C "
+        "format": " {temperatureC}°C"
     },
     "memory": {
-    "interval": 30,
-    "format": "{avail}GiB  ",
-    "max-length": 11,
-    "tooltie": true,
-    "tooltip-format": "{percentage}% used"
+        "interval": 30,
+        "format": " {avail}GiB",
+        "max-length": 11,
+        "tooltip": true,
+        "tooltip-format": "{percentage}% used"
     },
     "disk": {
-    "interval": 30,
-    "format": "{free}  ",
-    "path": "/"
+        "interval": 30,
+        "format": " {free}",
+        "path": "/"
     },
     "network": {
-        "format-wifi": "",
-        "format-ethernet": "",
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": " {ifname}",
         "format-linked": "",
         "format-disconnected": "⚠",
         "format-alt": "{ipaddr}/{cidr} - Signal Strength: {signalStrength}%"
@@ -79,7 +85,7 @@
     },
     "custom/lock": {
         "tooltip": false,
-        "on-click": "wlogout --protocol layer-shell --buttons-per-row 5 --column-spacing 10 --row-spacing 10 --margin 400 --no-span",
+        "on-click": "/home/ali/.config/hypr/power-menu.sh",
         "format": ""
     },
     "tray": {

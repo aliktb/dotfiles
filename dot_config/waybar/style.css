@@ -1,49 +1,64 @@
 @import "frappe.css";
 
 * {
-  font-family: FantasqueSansMono Nerd Font;
+  border: none;
+  border-radius: 0;
+  font-family: FantasqueSansMono Nerd Font, JetBrainsMono Nerd Font, monospace;
   font-size: 12px;
+  font-weight: 600;
   min-height: 0;
 }
 
 window#waybar {
-  background-color: @crust;
+  background: rgba(35, 38, 52, 0.72);
+  border-bottom: 1px solid rgba(186, 187, 241, 0.18);
   color: @text;
 }
 
+tooltip {
+  background: @mantle;
+  border: 1px solid @surface1;
+  border-radius: 8px;
+  color: @text;
+}
+
+tooltip label {
+  color: @text;
+  padding: 6px;
+}
+
 #workspaces {
-  margin-left: 8px;
+  background: rgba(48, 52, 70, 0.9);
+  border: 1px solid rgba(98, 104, 128, 0.45);
+  border-radius: 11px;
+  margin: 5px 0 5px 8px;
+  padding: 2px 4px;
 }
 
 #workspaces button {
-  background-color: transparent;
-  border-radius: 50%;
-  color: @overlay0;
-  padding: 0 4px;
-  margin: 0 2px;
-  min-width: 8px;
-  font-size: 8px;
+  background: transparent;
+  border-radius: 8px;
+  color: @overlay1;
+  margin: 0 1px;
+  min-width: 20px;
+  padding: 0 7px;
 }
 
 #workspaces button.focused,
+#workspaces button.active,
 #workspaces button.visible {
-  color: @lavender;
-  font-size: 12px;
-  padding: 0 6px;
-  border-top: 2px solid @lavender;
-  border-radius: 0;
+  background: linear-gradient(135deg, @lavender, @mauve);
+  color: @crust;
+}
+
+#workspaces button.urgent {
+  background: @red;
+  color: @crust;
 }
 
 #workspaces button:hover {
-  background-color: transparent;
-  color: @sapphire;
-}
-
-#custom-music {
-  color: @mauve;
-  border-left: 2px solid @surface1;
-  padding: 0 12px;
-  margin: 6px 0;
+  background: @surface1;
+  color: @text;
 }
 
 #backlight,
@@ -51,6 +66,7 @@ window#waybar {
 #clock,
 #cpu,
 #custom-lock,
+#custom-music,
 #custom-power,
 #disk,
 #memory,
@@ -58,8 +74,18 @@ window#waybar {
 #pulseaudio,
 #temperature,
 #tray {
-  padding: 0 6px;
-  background-color: transparent;
+  background: rgba(48, 52, 70, 0.86);
+  border: 1px solid rgba(98, 104, 128, 0.38);
+  border-radius: 10px;
+  margin: 5px 0;
+  padding: 0 10px;
+}
+
+#clock {
+  background: rgba(41, 44, 60, 0.94);
+  border-color: rgba(186, 187, 241, 0.38);
+  color: @lavender;
+  padding: 0 14px;
 }
 
 #cpu {
@@ -72,6 +98,8 @@ window#waybar {
 }
 
 #temperature.critical {
+  background: rgba(231, 130, 132, 0.18);
+  border-color: @red;
   color: @red;
 }
 
@@ -84,7 +112,7 @@ window#waybar {
 }
 
 #pulseaudio {
-  color: @subtext0;
+  color: @sky;
 }
 
 #pulseaudio.muted {
@@ -96,6 +124,8 @@ window#waybar {
 }
 
 #network.disconnected {
+  background: rgba(231, 130, 132, 0.18);
+  border-color: @red;
   color: @red;
 }
 
@@ -105,34 +135,39 @@ window#waybar {
 
 #battery {
   color: @green;
-  padding-right: 18px;
 }
 
-#battery.charging {
+#battery.charging,
+#battery.plugged {
+  background: rgba(166, 209, 137, 0.14);
+  border-color: rgba(166, 209, 137, 0.55);
   color: @green;
 }
 
 #battery.warning:not(.charging) {
+  background: rgba(239, 159, 118, 0.14);
+  border-color: rgba(239, 159, 118, 0.55);
   color: @peach;
 }
 
 #battery.critical:not(.charging) {
+  background: rgba(231, 130, 132, 0.18);
+  border-color: @red;
   color: @red;
 }
 
-#clock {
-  color: @blue;
-}
-
 #tray {
-  padding: 0 8px;
-  border-left: 2px solid @surface1;
-  margin: 6px 0;
+  padding: 0 9px;
 }
 
 #custom-lock {
-  color: @lavender;
-  border-left: 2px solid @surface1;
-  margin: 6px 0;
-  padding-right: 12px;
+  color: @red;
+  margin-right: 8px;
+  padding: 0 12px;
+}
+
+#custom-lock:hover {
+  background: @red;
+  border-color: @red;
+  color: @crust;
 }
