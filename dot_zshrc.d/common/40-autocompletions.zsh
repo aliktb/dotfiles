@@ -1,10 +1,12 @@
 # Autocompletions
 local -a completion_cmds=(
+  argocd
   clusterawsadm
   eksctl
   flux
   flux-operator
   nerdctl
+  oc
   talosctl
   telepresence
   vcluster
