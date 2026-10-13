@@ -1,3 +1,8 @@
+mode = "symlink"
+
+[edit]
+  watch = true
+
 [data]
 {{- if eq .chezmoi.os "darwin" }}
   zsh_plugins_dir = "/opt/homebrew/share"
