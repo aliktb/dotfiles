@@ -11,7 +11,7 @@
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gitlab.com"]
 	helper = 
-	helper = !/usr/bin/glab auth git-credential
+	helper = !glab auth git-credential
 [init]
 	defaultBranch = main
 [interactive]
