@@ -4,11 +4,6 @@ eval "$(starship init zsh)"
 # Enable direnv
 eval "$(direnv hook zsh)"
 
-# Enable fnm with cd
-if command -v fnm >/dev/null 2>&1; then
-  eval "$(fnm env --use-on-cd --shell zsh)"
-fi
-
 # Enable pyenv
 eval "$(pyenv init - zsh)"
 
