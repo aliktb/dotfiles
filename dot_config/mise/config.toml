@@ -1,0 +1,9 @@
+[tools]
+java = "lts"
+node = "lts"
+
+[settings]
+idiomatic_version_file_enable_tools = ["java"]
+
+[settings.java]
+shorthand_vendor = "temurin"
