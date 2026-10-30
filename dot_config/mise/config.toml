@@ -1,8 +1,12 @@
 [tools]
+flux-operator = "latest"
+flux2 = "latest"
 go = "1.27"
 java = "lts"
+kubectl = "1.37"
 node = "lts"
 python = "latest"
+talosctl = "1.14"
 
 [settings]
 idiomatic_version_file_enable_tools = ["java"]
