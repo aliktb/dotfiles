@@ -58,7 +58,7 @@ hl.config({
         disable_hyprland_logo = false,
     },
     input = {
-        kb_layout = "us",
+        kb_layout = "gb",
         kb_variant = "",
         kb_model = "",
         kb_options = "",
