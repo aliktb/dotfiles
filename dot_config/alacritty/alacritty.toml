@@ -34,7 +34,7 @@ cyan    = '#9aedfe'
 white   = '#f1f1f0'
 
 [window]
-decorations = "Full"
+decorations = "None"
 title = "Alacritty"
 dynamic_title = false
 
