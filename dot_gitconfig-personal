@@ -5,10 +5,10 @@
 	pager = diff-so-fancy | less --tabs=4 -RF
 [credential "https://github.com"]
 	helper = 
-	helper = !/usr/bin/gh auth git-credential
+	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !/usr/bin/gh auth git-credential
+	helper = !gh auth git-credential
 [credential "https://gitlab.com"]
 	helper = 
 	helper = !glab auth git-credential
