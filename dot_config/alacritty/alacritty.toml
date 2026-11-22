@@ -40,7 +40,7 @@ dynamic_title = false
 
 [font]
 
-normal = {family = "CommitMono Nerd Font", style = "Regular"}
+normal = {family = "CommitMono Nerd Font Mono", style = "Regular"}
 
 size = 12
 
